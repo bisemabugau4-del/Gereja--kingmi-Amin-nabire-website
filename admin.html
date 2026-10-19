@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Admin | KINGMI AMIN</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <main class="shell">
+    <section id="loginView" class="auth-card">
+      <div class="logo-circle">K</div>
+      <p class="eyebrow">Dashboard Pengelola</p>
+      <h1>Admin KINGMI AMIN</h1>
+      <p class="muted">Masuk untuk mengelola berita, jadwal ibadah, dan statistik jemaat dari HP.</p>
+      <form id="loginForm" class="stack">
+        <label>Email / Username<input id="loginEmail" type="email" placeholder="admin@email.com" autocomplete="username" required></label>
+        <label>Password<input id="loginPassword" type="password" placeholder="Masukkan password" autocomplete="current-password" required></label>
+        <button class="btn primary" type="submit">Masuk ke Dashboard</button>
+      </form>
+      <p id="loginMessage" class="message"></p>
+      <a class="back-link" href="../">← Kembali ke website</a>
+    </section>
+
+    <section id="dashboardView" class="dashboard" hidden>
+      <header class="dash-header"><div><p class="eyebrow">Panel kontrol</p><h1>Dashboard KINGMI</h1><p id="userLabel" class="muted"></p></div><button id="logoutBtn" class="btn ghost">Keluar</button></header>
+      <div id="dashMessage" class="message"></div>
+      <section class="panel"><div class="panel-heading"><div><h2>Statistik Jemaat</h2><p class="muted">Angka ini tampil di halaman Beranda.</p></div><button class="btn primary" id="saveSettingsBtn">Simpan Statistik</button></div><form id="settingsForm" class="three-col"><label>Total Jemaat<input id="totalJemaat" type="number" min="0" required></label><label>Jemaat Hidup<input id="jemaatHidup" type="number" min="0" required></label><label>Jemaat Meninggal<input id="jemaatMeninggal" type="number" min="0" required></label></form></section>
+      <section class="panel"><div class="panel-heading"><div><h2>Jadwal Ibadah</h2><p class="muted">Edit baris jadwal atau tambah jadwal baru.</p></div><button class="btn primary" id="saveScheduleBtn">Simpan Jadwal</button></div><div id="scheduleRows" class="rows"></div><button class="btn ghost add-btn" id="addScheduleBtn">+ Tambah jadwal</button></section>
+      <section class="panel"><div class="panel-heading"><div><h2>Berita</h2><p class="muted">Tulis berita baru, edit, atau hapus artikel.</p></div><button class="btn primary" id="newArticleBtn">+ Berita Baru</button></div><div id="articleEditor" class="editor-card" hidden><form id="articleForm" class="stack"><input id="articleId" type="hidden"><label>Judul berita<input id="articleTitle" type="text" required></label><label>Tanggal<input id="articleDate" type="text" placeholder="19 Oktober 2026" required></label><label>URL gambar (opsional)<input id="articleImage" type="url" placeholder="https://..."></label><label>Ringkasan<textarea id="articleExcerpt" rows="3" required></textarea></label><label>Isi lengkap<textarea id="articleBody" rows="6" required></textarea></label><div class="actions"><button class="btn primary" type="submit">Simpan Berita</button><button class="btn ghost" type="button" id="cancelArticleBtn">Batal</button></div></form></div><div id="articleList" class="article-list"></div></section>
+    </section>
+  </main>
+  <script src="admin.js?v=20261020"></script>
+</body>
+</html>

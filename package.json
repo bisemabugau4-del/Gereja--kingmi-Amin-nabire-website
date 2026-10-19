@@ -1,0 +1,8 @@
+{
+  "name": "kingmi-amin-cloudflare-pages",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "@neondatabase/serverless": "^1.2.0"
+  }
+}

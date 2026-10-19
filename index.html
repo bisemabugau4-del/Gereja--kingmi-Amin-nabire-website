@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website Resmi Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah, Papua Tengah" />
+  <title>Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah | Gereja Kemah Injil</title>
+  <style>
+    :root {
+      --navy: #102a43;
+      --blue: #1769aa;
+      --sky: #e9f4ff;
+      --yellow: #f4b400;
+      --yellow-soft: #fff4cf;
+      --red: #c93432;
+      --red-soft: #fff0ef;
+      --ink: #182230;
+      --muted: #607080;
+      --white: #ffffff;
+      --line: #e5ebf1;
+      --shadow: 0 14px 40px rgba(16, 42, 67, .10);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: #f8fafc; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #dbeafe; font-size: .82rem; }
+    .topbar-inner { display:flex; justify-content:space-between; gap:16px; padding: 8px 0; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+    .nav-wrap { display:flex; align-items:center; justify-content:space-between; gap: 24px; min-height: 78px; }
+    .brand { display:flex; align-items:center; gap: 12px; min-width: 300px; }
+    .brand-mark { width: 46px; height: 46px; border-radius: 50%; display:grid; place-items:center; overflow:hidden; background: linear-gradient(145deg, var(--yellow) 0 50%, var(--red) 50% 75%, var(--blue) 75%); color:white; font-weight:900; letter-spacing:-1px; border: 3px solid var(--white); box-shadow: 0 0 0 2px var(--yellow); }
+    .brand-logo { width:100%; height:100%; object-fit:cover; display:block; }
+    .brand strong { color: var(--navy); display:block; max-width: 305px; font-size: .76rem; line-height: 1.15; overflow-wrap:anywhere; }
+    .brand span { font-size: .72rem; color: var(--muted); }
+    .nav-links { display:flex; align-items:center; gap: 4px; list-style:none; }
+    .nav-links a { display:block; padding: 10px 12px; border-radius: 10px; color: #40566b; font-size: .88rem; font-weight: 650; transition:.2s ease; }
+    .nav-links a:hover, .nav-links a.active { background: var(--sky); color: var(--blue); }
+    .nav-links .admin-link a { background: var(--yellow); color: #332500; font-size: .8rem; padding: 8px 11px; }
+    .nav-links .admin-link a:hover { background: #ffd34d; color: #332500; }
+    .menu-toggle { display:none; border:0; background:var(--sky); color:var(--navy); padding:10px 12px; border-radius:10px; cursor:pointer; }
+    .hero { overflow:hidden; position:relative; background: linear-gradient(115deg, #08233e 0%, #123e63 55%, #1769aa 100%); color:white; padding: 76px 0 74px; }
+    .hero::after { content:""; position:absolute; width:480px; height:480px; border-radius:50%; border: 70px solid rgba(244,180,0,.14); right:-160px; top:-190px; }
+    .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns: 1.15fr .85fr; align-items:center; gap:60px; }
+    .eyebrow { color: var(--yellow); font-weight:800; text-transform:uppercase; letter-spacing:.13em; font-size:.75rem; margin-bottom: 14px; }
+    h1 { font-size: clamp(2.25rem, 5vw, 4.25rem); line-height:1.08; letter-spacing:-.05em; margin-bottom: 20px; }
+    .hero p { color:#cfe2f4; font-size: 1.05rem; max-width: 620px; }
+    .hero-actions { display:flex; gap: 12px; flex-wrap:wrap; margin-top: 30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; cursor:pointer; border:0; border-radius: 11px; padding: 12px 17px; font-weight:800; transition: transform .2s, box-shadow .2s, background .2s; }
+    .btn:hover { transform:translateY(-2px); box-shadow:0 10px 22px rgba(0,0,0,.15); }
+    .btn-primary { background:var(--yellow); color: #332500; }
+    .btn-light { background:white; color:var(--navy); }
+    .hero-emblem { display:grid; place-items:center; min-height: 310px; position:relative; }
+    .hero-emblem-card { text-align:center; width: 280px; height:280px; border-radius: 50%; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.3); display:grid; place-items:center; position:relative; }
+    .hero-emblem-card::before { content:""; position:absolute; inset:18px; border:2px dashed var(--yellow); border-radius:50%; opacity:.8; }
+    .logo-img { width: 120px; height: 120px; object-fit:contain; border-radius: 50%; background:white; padding:10px; z-index:1; }
+    .logo-fallback { position:absolute; z-index:2; color:var(--navy); background:white; border-radius:50%; width:105px; height:105px; display:grid; place-items:center; font-weight:950; font-size:2rem; letter-spacing:-.1em; }
+    .hero-emblem-card small { position:absolute; bottom:39px; z-index:3; color:white; font-weight:800; letter-spacing:.08em; font-size:.66rem; }
+    section { padding: 82px 0; }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:20px; margin-bottom:28px; }
+    .section-head h2 { font-size:clamp(1.75rem,3vw,2.5rem); color:var(--navy); line-height:1.15; letter-spacing:-.04em; }
+    .section-head p { color:var(--muted); max-width:550px; }
+    .stats { margin-top:-34px; position:relative; z-index:3; display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+    .stat { background:white; border-radius:var(--radius); box-shadow:var(--shadow); padding:22px 24px; border-top:4px solid var(--yellow); }
+    .stat:nth-child(2){border-top-color:var(--blue)} .stat:nth-child(3){border-top-color:var(--red)}
+    .stat-label { color:var(--muted); font-size:.85rem; } .stat-number { color:var(--navy); font-weight:900; font-size:2rem; line-height:1.2; margin-top:4px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .card { background:white; border:1px solid var(--line); border-radius:var(--radius); padding:26px; box-shadow: 0 5px 20px rgba(16,42,67,.04); }
+    .card h3 { color:var(--navy); margin-bottom:10px; font-size:1.15rem; }
+    .card p { color:var(--muted); }
+    .notice { border-left: 4px solid var(--red); background: var(--red-soft); padding:18px 20px; border-radius: 0 14px 14px 0; margin-bottom:13px; }
+    .notice:last-child { margin-bottom:0; } .notice b { display:block; color:var(--navy); } .notice small { color:var(--muted); }
+    .news-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .news-card { overflow:hidden; padding:0; }
+    .news-image { height:150px; background:linear-gradient(135deg,#e8f1f7,#b9cee1); display:grid; place-items:center; color:#6d889f; font-weight:800; letter-spacing:.05em; font-size:.76rem; }
+    .news-content { padding:20px; } .news-date { color:var(--red); font-weight:800; font-size:.75rem; text-transform:uppercase; letter-spacing:.06em; } .news-content h3 { margin:7px 0; } .news-card { cursor:pointer; transition:transform .2s, box-shadow .2s; } .news-card:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+    .news-content p { font-size:.9rem; }
+    .about-layout { display:grid; grid-template-columns: .9fr 1.1fr; gap:50px; align-items:center; }
+    .about-visual { min-height:390px; background: linear-gradient(145deg,var(--yellow-soft),#fff 52%,var(--sky)); border-radius:28px; padding:28px; display:flex; align-items:end; position:relative; overflow:hidden; }
+    .about-visual::before { content:""; position:absolute; width:230px; height:230px; border-radius:50%; background:var(--red); opacity:.12; top:-70px; right:-45px; } .about-visual::after { content:"✦"; color:var(--yellow); font-size:13rem; position:absolute; left:-20px; top:40px; opacity:.3; }
+    .quote { position:relative; z-index:1; background:rgba(255,255,255,.9); padding:22px; border-radius:16px; border-left:5px solid var(--blue); } .quote strong { color:var(--navy); display:block; }
+    .check-list { list-style:none; display:grid; gap:12px; margin-top:18px; } .check-list li { display:flex; gap:10px; color:var(--muted); } .check-list li::before { content:"✓"; color:var(--blue); font-weight:900; }
+    .people { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px; } .person { text-align:center; padding:20px 12px; background:#f7fafc; border-radius:15px; } .person-avatar { width:56px;height:56px;border-radius:50%;margin:0 auto 11px;display:grid;place-items:center;background:var(--sky);color:var(--blue);font-weight:900; } .person h4 { color:var(--navy); } .person p{font-size:.8rem;}
+    .schedule { width:100%; border-collapse:collapse; background:white; overflow:hidden; border-radius:var(--radius); box-shadow: var(--shadow); } .schedule th,.schedule td { text-align:left; padding:17px 20px; border-bottom:1px solid var(--line); } .schedule th { color:white; background:var(--navy); font-size:.82rem; text-transform:uppercase; letter-spacing:.05em; } .schedule tr:last-child td { border-bottom:0; } .schedule td:first-child { color:var(--blue); font-weight:800; } .schedule td:last-child { color:var(--muted); }
+    .gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; } .gallery-item { min-height:180px; border-radius:16px; display:flex; align-items:end; padding:16px; color:white; font-weight:800; position:relative; overflow:hidden; background:linear-gradient(140deg,#93b9d1,#38698d); } .gallery-item:nth-child(2){background:linear-gradient(140deg,#f5cf60,#d67449)} .gallery-item:nth-child(3){background:linear-gradient(140deg,#dca5a7,#8b5260)} .gallery-item:nth-child(4){background:linear-gradient(140deg,#7cb8aa,#2c6c74)} .gallery-item:nth-child(5){background:linear-gradient(140deg,#a4b8d8,#5b6eaa)} .gallery-item:nth-child(6){background:linear-gradient(140deg,#e1c783,#93714b)} .gallery-item::before { content:"FOTO KEGIATAN"; position:absolute; top:18px; left:16px; font-size:.65rem; opacity:.7; letter-spacing:.1em; } .gallery-item span { position:relative; z-index:1; }
+    .contact-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:24px; } .contact-list { display:grid; gap:16px; margin-top:18px; } .contact-item { display:flex; gap:13px; align-items:flex-start; } .contact-icon { width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:var(--yellow-soft);color:#8a6600;font-weight:900; } .contact-item strong { display:block; color:var(--navy); } .contact-item span { color:var(--muted); font-size:.9rem; } form { display:grid; gap:15px; } label { color:var(--navy); font-weight:750; font-size:.88rem; } input,textarea { width:100%; padding:12px 14px; margin-top:6px; border:1px solid #d8e1e9; border-radius:10px; outline:none; background:#fbfdff; color:var(--ink); } input:focus,textarea:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(23,105,170,.12); } textarea { min-height:125px; resize:vertical; }
+    footer { background:var(--navy); color:#bfd0df; padding:30px 0; } .footer-inner { display:flex; justify-content:space-between; gap:20px; align-items:center; } footer strong { color:white; } .socials { display:flex; gap:9px; } .socials a { width:34px;height:34px;border:1px solid #46647e;border-radius:50%;display:grid;place-items:center;color:white;font-size:.75rem; }
+    .toast { position:fixed; right:20px; bottom:20px; background:var(--navy); color:white; padding:14px 18px; border-radius:12px; box-shadow:var(--shadow); transform:translateY(130px); opacity:0; transition:.3s; z-index:50; font-size:.9rem; } .toast.show { transform:translateY(0); opacity:1; }
+    .modal-backdrop { position:fixed; inset:0; z-index:60; background:rgba(8,35,62,.68); display:grid; place-items:center; padding:20px; opacity:0; visibility:hidden; transition:.2s; } .modal-backdrop.open { opacity:1; visibility:visible; } .modal { width:min(560px,100%); background:white; border-radius:20px; padding:28px; position:relative; box-shadow:0 24px 70px rgba(0,0,0,.25); transform:translateY(12px); transition:.2s; } .modal-backdrop.open .modal { transform:translateY(0); } .modal-close { position:absolute; top:12px; right:14px; border:0; background:#eef5fb; color:var(--navy); width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:1.15rem; } .modal .news-date { margin-bottom:7px; } .modal h2 { color:var(--navy); line-height:1.2; margin-bottom:13px; } .modal p { color:var(--muted); }
+
+    .devotion-section { background: linear-gradient(135deg,#fffaf0 0%,#eef7ff 100%); }
+    .devotion-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:24px; align-items:stretch; }
+    .devotion-card { overflow:hidden; border:1px solid #eadfbf; background:rgba(255,255,255,.92); }
+    .devotion-visual { min-height:250px; background:linear-gradient(135deg,#123e63,#1769aa); position:relative; overflow:hidden; display:flex; align-items:end; padding:24px; color:white; }
+    .devotion-visual img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.76; }
+    .devotion-visual::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(8,35,62,.84),transparent 70%); }
+    .devotion-visual-content { position:relative; z-index:1; } .devotion-visual-content small { color:#ffe7a1; font-weight:800; text-transform:uppercase; letter-spacing:.1em; }
+    .devotion-visual-content h3 { color:white; margin-top:7px; font-size:1.5rem; }
+    .devotion-copy { padding:24px; } .devotion-copy .verse { color:var(--blue); font-weight:800; margin:12px 0; } .devotion-copy p { color:var(--muted); }
+    .devotion-meta { font-size:.75rem; color:var(--muted); margin-top:15px; } .devotion-meta a { color:var(--blue); text-decoration:underline; }
+    .prayer-card { border-top:4px solid var(--yellow); } .prayer-card h3 { display:flex; gap:9px; align-items:center; } .prayer-card h3::before { content:"✦"; color:var(--yellow); }
+    .prayer-text { font-family:Georgia,serif; font-size:1.05rem; color:var(--navy)!important; line-height:1.75; }
+    .verses-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-top:22px; } .verse-mini { border-left:4px solid var(--blue); padding:16px 17px; background:white; border-radius:0 14px 14px 0; } .verse-mini strong { display:block; color:var(--blue); margin-bottom:6px; } .verse-mini span { color:var(--muted); font-size:.9rem; }
+    .faith-section { background:#fff; } .faith-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; } .faith-card { position:relative; padding:30px; border:1px solid #eadfbf; background:linear-gradient(145deg,#fffdf5,#f7fbff); } .faith-card::before { content:"✝"; position:absolute; right:22px; top:14px; color:var(--yellow); opacity:.2; font-size:3rem; } .faith-card h3 { color:var(--navy); margin-bottom:14px; } .faith-card h3 span { color:var(--red); font-size:.8rem; display:block; text-transform:uppercase; letter-spacing:.1em; margin-bottom:5px; } .faith-text { white-space:pre-line; color:var(--muted); font-family:Georgia,serif; line-height:1.8; }
+    @media (max-width: 900px) { .nav-links { display:none; position:absolute; top:78px; left:0; right:0; background:white; border-bottom:1px solid var(--line); padding:12px 20px 18px; flex-direction:column; align-items:stretch; box-shadow:var(--shadow); } .nav-links.open { display:flex; } .nav-links a { padding:12px; } .menu-toggle { display:block; } .hero-grid,.about-layout,.contact-grid,.devotion-grid,.faith-grid { grid-template-columns:1fr; } .hero { padding:60px 0; } .hero-emblem { min-height:250px; } .news-grid { grid-template-columns:repeat(2,1fr); } .gallery { grid-template-columns:repeat(3,1fr); } }
+    @media (max-width: 600px) { .container { width:min(100% - 28px,1120px); } .topbar-inner { flex-direction:column; gap:0; } .brand { min-width:0; } .brand span { display:none; } h1 { font-size:2.35rem; } section { padding:62px 0; } .stats,.grid-2,.news-grid,.people,.verses-grid { grid-template-columns:1fr; } .stats { margin-top:-24px; } .section-head { display:block; } .section-head p { margin-top:10px; } .schedule { font-size:.83rem; } .schedule th,.schedule td { padding:13px 10px; } .schedule th:nth-child(3),.schedule td:nth-child(3) { display:none; } .gallery { grid-template-columns:repeat(2,1fr); } .gallery-item { min-height:140px; } .footer-inner { flex-direction:column; align-items:flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="topbar"><div class="container topbar-inner"><span>Website Resmi Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah</span><span>Papua Tengah · Melayani dengan kasih</span></div></div>
+  <header>
+    <div class="container nav-wrap">
+      <a href="#beranda" class="brand" aria-label="Kembali ke Beranda"><div class="brand-mark"><img class="brand-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQOaUDh23sjg5HfBLMAFbdHChjgGvgNhHvx-r3sIc&amp;s=0" alt="Logo resmi Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah" onerror="this.style.display='none'"></div><div><strong>Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah</strong><span>Gereja Kemah Injil</span></div></a>
+      <button class="menu-toggle" aria-label="Buka menu">☰</button>
+      <nav><ul class="nav-links"><li><a href="#beranda" class="active">Beranda</a></li><li><a href="#profil">Profil</a></li><li><a href="#jadwal">Jadwal Ibadah</a></li><li><a href="#berita">Berita & Artikel</a></li><li><a href="#iman-doa">Iman &amp; Doa</a></li><li><a href="#galeri">Galeri</a></li><li><a href="#kontak">Kontak</a></li><li class="admin-link"><a href="admin.html">Login Admin</a></li></ul></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div><div class="eyebrow">Damai Kristus menyertai kita semua</div><h1>Selamat Datang di Website Resmi Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah</h1><p>Menjadi keluarga Allah yang bertumbuh dalam iman, berakar dalam kasih, dan hadir membawa terang bagi Nabire serta Papua Tengah.</p><div class="hero-actions"><a class="btn btn-primary" href="#profil">Kenali Kami</a><a class="btn btn-light" href="#jadwal">Lihat Jadwal Ibadah</a></div></div>
+        <div class="hero-emblem"><div class="hero-emblem-card"><img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQOaUDh23sjg5HfBLMAFbdHChjgGvgNhHvx-r3sIc&amp;s=0" alt="Logo Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah" onerror="this.style.display='none'"><div class="logo-fallback">K<span style="color:var(--red)">I</span><span style="color:var(--blue)">N</span></div><small>Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah</small></div></div>
+      </div>
+    </section>
+
+    <section style="padding-top:0;background:#f8fafc"><div class="container"><div class="stats"><div class="stat"><span class="stat-label">Total Jemaat</span><div class="stat-number">1.248</div><span class="stat-label">Jemaat terdata</span></div><div class="stat"><span class="stat-label">Jemaat Hidup</span><div class="stat-number">1.220</div><span class="stat-label">Dalam persekutuan</span></div><div class="stat"><span class="stat-label">Jemaat Meninggal</span><div class="stat-number">28</div><span class="stat-label">Telah berpulang</span></div></div></div></section>
+
+    <section id="pengumuman"><div class="container"><div class="section-head"><div><div class="eyebrow">Informasi jemaat</div><h2>Pengumuman Terbaru</h2></div><p>Ikuti informasi pelayanan dan agenda penting keluarga besar Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah.</p></div><div class="grid-2"><div class="card"><div class="notice"><b>Ibadah Syukur Bulanan</b><small>Sabtu, 26 Oktober 2026 · Pukul 17.00 WIT</small></div><div class="notice"><b>Rapat Majelis Jemaat</b><small>Senin, 28 Oktober 2026 · Ruang Konsistori</small></div><div class="notice"><b>Persekutuan Doa Rayon</b><small>Setiap Rabu · Pukul 18.30 WIT</small></div></div><div class="card"><h3>Renungan Minggu Ini</h3><p>“Hendaklah kamu saling mengasihi sebagai saudara dan saling mendahului dalam memberi hormat.”</p><p style="margin-top:12px;color:var(--blue);font-weight:800">Roma 12:10</p></div></div></div></section>
+
+    <section id="renungan" class="devotion-section"><div class="container"><div class="section-head"><div><div class="eyebrow">Firman yang menguatkan</div><h2>Renungan Firman Tuhan Hari Ini</h2></div><p>Renungan, ayat, dan doa diperbarui otomatis melalui AI. Kiranya menjadi berkat bagi keluarga jemaat.</p></div><div class="devotion-grid"><article class="card devotion-card"><div class="devotion-visual" id="devotionVisual"><div class="devotion-visual-content"><small id="devotionLabel">Renungan Hari Ini</small><h3 id="devotionTitle">Menyiapkan renungan...</h3></div></div><div class="devotion-copy"><div class="verse" id="devotionVerse">Mohon tunggu sebentar...</div><p id="devotionText">Renungan sedang disiapkan. Silakan muat ulang halaman jika koneksi sedang kurang baik.</p><div class="devotion-meta" id="devotionMeta"></div></div></article><article class="card prayer-card"><h3>Doa Hari Ini</h3><p class="prayer-text" id="dailyPrayer">Tuhan, tuntunlah kami untuk hidup dalam kasih, menjaga iman, dan menjadi berkat bagi sesama. Amin.</p><div class="verses-grid" id="popularVerses"><div class="verse-mini"><strong>Yohanes 3:16</strong><span>Memuat ayat populer...</span></div><div class="verse-mini"><strong>Mazmur 23:1</strong><span>Memuat ayat populer...</span></div><div class="verse-mini"><strong>Filipi 4:13</strong><span>Memuat ayat populer...</span></div></div></article></div></div></section>
+
+    <section id="berita" style="background:white"><div class="container"><div class="section-head"><div><div class="eyebrow">Kabar gereja</div><h2>Berita & Perkembangan</h2></div><p>Catatan kegiatan, pelayanan, dan kisah pertumbuhan jemaat Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah.</p></div><div class="news-grid"><article class="card news-card"><div class="news-image">DUMMY FOTO 01</div><div class="news-content"><div class="news-date">18 Oktober 2026</div><h3>Ibadah Raya dan Perjamuan Kudus</h3><p>Jemaat berkumpul dalam sukacita untuk memperingati kasih dan pengorbanan Kristus.</p></div></article><article class="card news-card"><div class="news-image">DUMMY FOTO 02</div><div class="news-content"><div class="news-date">12 Oktober 2026</div><h3>Pelayanan Diakonia Bagi Keluarga</h3><p>Tim diakonia mengunjungi dan menguatkan keluarga jemaat di beberapa rayon pelayanan.</p></div></article><article class="card news-card"><div class="news-image">DUMMY FOTO 03</div><div class="news-content"><div class="news-date">05 Oktober 2026</div><h3>Seminar Pemuda: Bertumbuh Bersama</h3><p>Pemuda-pemudi Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah membangun karakter dan talenta untuk melayani Tuhan.</p></div></article><article class="card news-card"><div class="news-image">DUMMY FOTO 04</div><div class="news-content"><div class="news-date">28 September 2026</div><h3>Kerja Bakti Lingkungan Gereja</h3><p>Warga jemaat bergotong royong menata lingkungan gereja agar semakin nyaman.</p></div></article><article class="card news-card"><div class="news-image">DUMMY FOTO 05</div><div class="news-content"><div class="news-date">20 September 2026</div><h3>Pelatihan Musik dan Paduan Suara</h3><p>Pelayan musik memperdalam keterampilan untuk mendukung ibadah yang khidmat.</p></div></article><article class="card news-card"><div class="news-image">DUMMY FOTO 06</div><div class="news-content"><div class="news-date">14 September 2026</div><h3>Kunjungan Kasih ke Rayon</h3><p>Pengurus jemaat hadir mendengar, mendoakan, dan berjalan bersama warga rayon.</p></div></article></div></div></section>
+
+    <section id="iman-doa" class="faith-section"><div class="container"><div class="section-head"><div><div class="eyebrow">Dasar pengharapan</div><h2>Iman &amp; Doa</h2></div><p>Pengakuan iman dan doa yang menolong kita berakar dalam Kristus serta hidup dalam persekutuan.</p></div><div class="faith-grid"><article class="card faith-card"><h3><span>Pengakuan iman gereja</span>Pengakuan Iman Rasuli</h3><p class="faith-text">Aku percaya kepada Allah, Bapa yang Mahakuasa, Khalik langit dan bumi. Dan kepada Yesus Kristus, Anak-Nya yang Tunggal, Tuhan kita. Yang dikandung daripada Roh Kudus, lahir oleh anak dara Maria. Yang menderita sengsara, di bawah pemerintahan Pontius Pilatus. Disalibkan, mati dan dikuburkan. Yang turun ke dalam kerajaan maut. Pada hari yang ketiga bangkit pula dari antara orang mati. Naik ke surga, duduk di sebelah kanan Allah, Bapa yang Mahakuasa. Dan akan datang dari sana untuk menghakimi orang yang hidup dan yang mati. Aku percaya kepada Roh Kudus. Gereja yang kudus dan am. Persekutuan orang kudus. Pengampunan dosa. Kebangkitan tubuh. Dan hidup yang kekal. Amin.</p></article><article class="card faith-card"><h3><span>Doa yang diajarkan Yesus</span>Doa Bapa Kami</h3><p class="faith-text">Bapa kami yang di surga, dimuliakanlah nama-Mu. Datanglah Kerajaan-Mu, jadilah kehendak-Mu di bumi seperti di surga. Berikanlah kami pada hari ini makanan kami yang secukupnya. Dan ampunilah kami akan kesalahan kami, seperti kami juga mengampuni orang yang bersalah kepada kami. Dan janganlah membawa kami ke dalam pencobaan, tetapi lepaskanlah kami dari pada yang jahat. Karena Engkaulah yang empunya Kerajaan dan kuasa dan kemuliaan sampai selama-lamanya. Amin.</p><p style="margin-top:16px;color:var(--blue);font-weight:800">Matius 6:9–13</p></article></div></div></section>
+
+    <section id="profil"><div class="container"><div class="about-layout"><div class="about-visual"><div class="quote"><strong>“Bertumbuh dalam iman, melayani dalam kasih.”</strong><span>— Keluarga Besar Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah</span></div></div><div><div class="eyebrow">Tentang kami</div><h2>Sejarah Singkat & Perkembangan</h2><p style="margin-top:16px;color:var(--muted)">Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah hadir sebagai persekutuan umat percaya yang membawa kabar baik dan menghadirkan kasih Kristus di tengah masyarakat Papua Tengah. Dari komunitas kecil, pelayanan terus berkembang melalui ibadah, pendidikan iman, diakonia, dan pelayanan bagi generasi muda.</p><ul class="check-list"><li>Membangun jemaat yang dewasa dalam iman dan karakter.</li><li>Menguatkan keluarga sebagai pusat pertumbuhan rohani.</li><li>Melayani masyarakat dengan kepedulian dan integritas.</li></ul></div></div></div></section>
+
+    <section style="background:white" id="visi"><div class="container"><div class="section-head"><div><div class="eyebrow">Arah pelayanan</div><h2>Visi & Misi</h2></div></div><div class="grid-2"><div class="card" style="border-top:4px solid var(--blue)"><h3>Visi</h3><p>Menjadi gereja yang berakar kuat dalam Kristus, bertumbuh bersama, dan berdampak bagi sesama di Papua Tengah.</p></div><div class="card" style="border-top:4px solid var(--yellow)"><h3>Misi</h3><p>Menyelenggarakan ibadah yang hidup, membina warga gereja, memperlengkapi pelayan, serta menghadirkan pelayanan kasih bagi masyarakat.</p></div></div><div class="section-head" style="margin-top:55px;margin-bottom:0"><div><div class="eyebrow">Pelayan jemaat</div><h2>Struktur Kepengurusan</h2></div></div><div class="people"><div class="person"><div class="person-avatar">P</div><h4>Pdt. [Nama Pendeta]</h4><p>Pendeta Jemaat</p></div><div class="person"><div class="person-avatar">M</div><h4>Ev. [Nama Majelis]</h4><p>Ketua Majelis</p></div><div class="person"><div class="person-avatar">S</div><h4>Sdr. [Nama Sekretaris]</h4><p>Sekretaris Jemaat</p></div></div></div></section>
+
+    <section id="jadwal"><div class="container"><div class="section-head"><div><div class="eyebrow">Mari bersekutu</div><h2>Jadwal Ibadah</h2></div><p>Silakan hadir dan bersekutu bersama keluarga besar Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah.</p></div><div style="overflow-x:auto"><table class="schedule"><thead><tr><th>Jenis Ibadah</th><th>Hari</th><th>Waktu</th><th>Keterangan</th></tr></thead><tbody><tr><td>Ibadah Jemaat Umum</td><td>Minggu</td><td>09.00–11.00 WIT</td><td>Gedung Gereja Utama</td></tr><tr><td>Sekolah Minggu</td><td>Minggu</td><td>08.00–09.00 WIT</td><td>Kelas Anak & Remaja</td></tr><tr><td>Pemuda/Pemudi</td><td>Sabtu</td><td>17.00–19.00 WIT</td><td>Ruang Serbaguna</td></tr><tr><td>Ibadah Rayon</td><td>Rabu</td><td>18.30–20.00 WIT</td><td>Rumah Rayon masing-masing</td></tr></tbody></table></div></div></section>
+
+    <section id="galeri" style="background:white"><div class="container"><div class="section-head"><div><div class="eyebrow">Momen kebersamaan</div><h2>Galeri Foto</h2></div><p>Dokumentasi kegiatan dan pelayanan jemaat. Foto dapat diganti dengan dokumentasi resmi gereja.</p></div><div class="gallery"><div class="gallery-item"><span>Ibadah Raya</span></div><div class="gallery-item"><span>Sekolah Minggu</span></div><div class="gallery-item"><span>Persekutuan Pemuda</span></div><div class="gallery-item"><span>Pelayanan Diakonia</span></div><div class="gallery-item"><span>Kerja Bakti</span></div><div class="gallery-item"><span>Pelatihan Musik</span></div></div></div></section>
+
+    <section id="kontak"><div class="container"><div class="section-head"><div><div class="eyebrow">Hubungi kami</div><h2>Kontak & Lokasi</h2></div><p>Kami senang dapat mendengar pertanyaan, saran, dan kebutuhan pelayanan Anda.</p></div><div class="contact-grid"><div class="card"><h3>Sekretariat Gereja</h3><div class="contact-list"><div class="contact-item"><div class="contact-icon">⌖</div><div><strong>Alamat</strong><span>Jl. [Nama Jalan] No. [Nomor], Nabire, Papua Tengah</span></div></div><div class="contact-item"><div class="contact-icon">☎</div><div><strong>Telepon / WhatsApp</strong><span>+62 8XX-XXXX-XXXX</span></div></div><div class="contact-item"><div class="contact-icon">✉</div><div><strong>Email</strong><span>sekretariat@kingminabire.org</span></div></div><div class="contact-item"><div class="contact-icon">◎</div><div><strong>Media Sosial</strong><span>Instagram: @kingminabire · Facebook: Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah</span></div></div></div></div><div class="card"><h3>Kirim Pesan</h3><form id="contactForm"><label>Nama<input type="text" name="nama" placeholder="Nama lengkap" required></label><label>Email<input type="email" name="email" placeholder="nama@email.com" required></label><label>Pesan<textarea name="pesan" placeholder="Tuliskan pesan Anda..." required></textarea></label><button class="btn btn-primary" type="submit">Kirim Pesan</button></form></div></div></div></section>
+  </main>
+  <footer><div class="container footer-inner"><div><strong>Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah</strong><div style="font-size:.8rem;margin-top:4px">© 2026 Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah. Semua hak dilindungi.</div></div><div class="socials"><a href="#kontak" aria-label="Instagram">IG</a><a href="#kontak" aria-label="Facebook">FB</a><a href="#kontak" aria-label="WhatsApp">WA</a></div></div></footer>
+  <div class="toast" id="toast">Pesan Anda sudah dicatat. Tuhan memberkati!</div>
+  <div class="modal-backdrop" id="newsModal" role="dialog" aria-modal="true" aria-label="Detail berita"><div class="modal"><button class="modal-close" aria-label="Tutup detail">×</button><div class="news-date" id="modalDate"></div><h2 id="modalTitle"></h2><p id="modalBody"></p><button class="btn btn-primary" style="margin-top:20px" id="modalDone">Tutup</button></div></div>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const links = [...document.querySelectorAll('.nav-links a')];
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) { links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id)); } }), { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => observer.observe(section));
+    const newsModal = document.getElementById('newsModal');
+    const closeNews = () => newsModal.classList.remove('open');
+    document.querySelectorAll('.news-card').forEach(card => card.addEventListener('click', () => { document.getElementById('modalDate').textContent = card.querySelector('.news-date').textContent; document.getElementById('modalTitle').textContent = card.querySelector('h3').textContent; document.getElementById('modalBody').textContent = card.querySelector('.news-content p').textContent + ' Informasi lengkap dan dokumentasi kegiatan dapat diperoleh melalui sekretariat Gereja Kemah Injil (KINGMI) AMIN Bumi Wonorejo Nabire, Papua Tengah.'; newsModal.classList.add('open'); }));
+    document.querySelector('.modal-close').addEventListener('click', closeNews); document.getElementById('modalDone').addEventListener('click', closeNews); newsModal.addEventListener('click', event => { if (event.target === newsModal) closeNews(); }); document.addEventListener('keydown', event => { if (event.key === 'Escape') closeNews(); });
+    document.getElementById('contactForm').addEventListener('submit', event => { event.preventDefault(); document.getElementById('toast').classList.add('show'); event.target.reset(); setTimeout(() => document.getElementById('toast').classList.remove('show'), 3500); });
+  </script>
+  <script>
+    const publicApi = async () => {
+      try {
+        const response = await fetch('/api/data', { cache: 'no-store' });
+        if (!response.ok) return;
+        const data = await response.json();
+        const settings = data.settings;
+        const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+        if (settings) {
+          document.title = settings.site_name + ' | Gereja Kemah Injil';
+          document.querySelector('.topbar-inner span').textContent = 'Website Resmi ' + settings.site_name;
+          document.querySelector('.brand strong').textContent = settings.site_name;
+          document.querySelector('.brand span').textContent = settings.short_name || '';
+          document.querySelector('.hero h1').textContent = 'Selamat Datang di Website Resmi ' + settings.site_name;
+          document.querySelector('.hero p').textContent = settings.hero_text || '';
+          document.querySelector('.stat:nth-child(1) .stat-number').textContent = Number(settings.total_jemaat || 0).toLocaleString('id-ID');
+          document.querySelector('.stat:nth-child(2) .stat-number').textContent = Number(settings.jemaat_hidup || 0).toLocaleString('id-ID');
+          document.querySelector('.stat:nth-child(3) .stat-number').textContent = Number(settings.jemaat_meninggal || 0).toLocaleString('id-ID');
+          document.querySelectorAll('.logo-img,.brand-logo').forEach(img => { if (settings.logo) img.src = settings.logo; });
+          const spans = document.querySelectorAll('#kontak .contact-item span');
+          if (spans[0]) spans[0].textContent = settings.address || '';
+          if (spans[1]) spans[1].textContent = settings.phone || '';
+          if (spans[2]) spans[2].textContent = settings.email || '';
+          if (spans[3]) spans[3].textContent = 'Instagram: ' + (settings.instagram || '') + ' · Facebook: ' + (settings.facebook || '');
+        }
+        if (data.announcements?.length) document.querySelector('#pengumuman .card').innerHTML = data.announcements.map(x => '<div class="notice"><b>' + esc(x.title) + '</b><small>' + esc(x.date_text) + '</small></div>').join('');
+        if (data.schedule?.length) document.querySelector('.schedule tbody').innerHTML = data.schedule.map(x => '<tr><td>' + esc(x.service) + '</td><td>' + esc(x.day) + '</td><td>' + esc(x.time_text) + '</td><td>' + esc(x.place) + '</td></tr>').join('');
+        if (data.articles?.length) document.querySelector('.news-grid').innerHTML = data.articles.filter(x => x.published !== false).map((x, i) => '<article class="card news-card" data-date="' + esc(x.date_text) + '" data-title="' + esc(x.title) + '" data-body="' + esc(x.body || x.excerpt) + '"><div class="news-image">' + (x.image ? '<img src="' + esc(x.image) + '" alt="" style="width:100%;height:100%;object-fit:cover">' : 'DUMMY FOTO ' + String(i + 1).padStart(2, '0')) + '</div><div class="news-content"><div class="news-date">' + esc(x.date_text) + '</div><h3>' + esc(x.title) + '</h3><p>' + esc(x.excerpt || '') + '</p></div></article>').join('');
+        document.querySelectorAll('.news-card').forEach(card => card.addEventListener('click', () => { document.getElementById('modalDate').textContent = card.dataset.date || ''; document.getElementById('modalTitle').textContent = card.dataset.title || ''; document.getElementById('modalBody').textContent = card.dataset.body || ''; document.getElementById('newsModal').classList.add('open'); }));
+      } catch (error) { console.warn('Cloudflare API belum tersedia:', error.message); }
+    };
+    publicApi();
+  </script>
+  <script>
+    (async function loadDevotion() {
+      const title = document.getElementById('devotionTitle');
+      try {
+        const response = await fetch('/api/devotion', { cache: 'no-store' });
+        if (!response.ok) throw new Error('AI endpoint unavailable');
+        const item = await response.json();
+        document.getElementById('devotionTitle').textContent = item.title || 'Renungan Hari Ini';
+        document.getElementById('devotionVerse').textContent = item.verse || '';
+        document.getElementById('devotionText').textContent = item.text || '';
+        document.getElementById('dailyPrayer').textContent = item.prayer || '';
+        const visual = document.getElementById('devotionVisual');
+        if (item.image) { const img = document.createElement('img'); img.src = item.image; img.alt = item.imageAlt || item.title || 'Ilustrasi renungan'; img.loading = 'lazy'; visual.prepend(img); }
+        const meta = document.getElementById('devotionMeta');
+        if (item.imageLink && item.photographer) meta.innerHTML = `Foto oleh <a href="${item.imageLink}" target="_blank" rel="noopener">${item.photographer}</a> di Unsplash`;
+        const verses = Array.isArray(item.verses) ? item.verses.slice(0,3) : [];
+        if (verses.length) document.getElementById('popularVerses').innerHTML = verses.map(v => `<div class="verse-mini"><strong>${v.reference || ''}</strong><span>${v.text || ''}</span></div>`).join('');
+      } catch (error) { if (title) title.textContent = 'Renungan belum tersedia'; document.getElementById('devotionMeta').textContent = 'Pastikan GEMINI_API_KEY dan UNSPLASH_ACCESS_KEY sudah ditambahkan di Cloudflare Pages.'; }
+    })();
+  </script>
+</body>
+</html>
